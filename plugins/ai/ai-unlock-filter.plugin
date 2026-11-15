@@ -1,5 +1,5 @@
 #!name = AI解锁筛选
-#!desc = 手动执行脚本，筛选 ChatGPT 或 Gemini 各自策略组的可用节点并选中。
+#!desc = 手动执行脚本，选中 ChatGPT 或 Gemini 的策略组中可用节点。
 #!author = MiaoWaa | ChatGPT检测参考：XIAO_KOP
 #!reference = https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
 #!homepage = https://github.com/MiaoWaa/loon
