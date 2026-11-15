@@ -1,10 +1,14 @@
 #!name = AI解锁筛选
 #!desc = 手动筛选 ChatGPT 和 Gemini 各自策略组的可用节点；两项独立执行
-#!author = MiaoWaa
+#!author = MiaoWaa (参考 XIAO_KOP) 
+#!reference = https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
 #!homepage = https://github.com/MiaoWaa/loon
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
 #!system = iOS,iPadOS,tvOS,macOS
 #!type = normal
+
+# ChatGPT 检测参考 XIAO_KOP 的流媒体解锁检测思路；Gemini 检测独立实现
+# 插件整合与节点自动选择：MiaoWaa
 
 [Argument]
 chatgpt_group = input,"ChatGPT",type=string,tag=ChatGPT策略组,desc=默认 ChatGPT
