@@ -25,6 +25,9 @@ try {
   title = "Emby 执行异常";
   content = String(e);
 }
-content += "\n北京时间：" + String(hour).padStart(2, "0") + ":" + String(now.getUTCMinutes()).padStart(2, "0");
+content = "━━━━━━━━━━━━━━\n" +
+  content.split("\n").map(function(line) { return "  " + line; }).join("\n") +
+  "\n\n执行时间  北京时间 " + String(hour).padStart(2, "0") + ":" + String(now.getUTCMinutes()).padStart(2, "0") +
+  "\n━━━━━━━━━━━━━━";
 console.log("[Emby Plugin] " + title + "；" + content.replace(/\n/g, "；"));
 $done({ title: title, content: content });
