@@ -1,11 +1,15 @@
 #!name = YouTube Premium反向筛选
 #!desc = 手动检测指定策略组的节点，仅选中明确提示不支持 YouTube Premium 的节点；异常不切换
-#!author = MiaoWaa
+#!author = MiaoWaa (参考 XIAO_KOP)
 #!homepage = https://github.com/MiaoWaa/loon
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
 #!system = iOS,iPadOS,tvOS,macOS
 #!loon_version = 3.5.1(983)
 #!type = normal
+
+# YouTube Premium 地区限制检测参考 XIAO_KOP
+# 原始脚本：https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
+# 反向筛选与策略组自动切换：MiaoWaa
 
 [Argument]
 group = input,"YouTube",type=string,tag=待筛选策略组,desc=默认 YouTube
