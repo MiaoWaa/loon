@@ -4,7 +4,7 @@
  * 结果是网络/地区可用性初筛，不代表账号可登录或具备全部功能。
  */
 const a = (typeof $argument !== "undefined" && $argument && typeof $argument === "object") ? $argument : {};
-const GROUP = String(a.group || "ChatGPT").trim();
+const GROUP = String(a.chatgpt_group || a.group || "ChatGPT").trim();
 const SERVICE = "ChatGPT";
 const TIMEOUT = 8000;
 const CONCURRENCY = 3;
