@@ -1,6 +1,6 @@
 #!name = ChatGPT解锁筛选
 #!desc = 手动检测策略组节点的 ChatGPT 网络和地区可用性，自动选择通过初筛的节点
-#!author = MiaoWaa (参考 XIAO_KOP)
+#!author = MiaoWaa | 检测参考：XIAO_KOP
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
 #!system = iOS,iPadOS,tvOS,macOS
 #!type = normal
