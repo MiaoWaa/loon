@@ -27,7 +27,7 @@ try {
     $config.setSelectPolicy(group, target);
     const after = $config.getSelectedPolicy(group);
     title = after === target ? "Emby 切换成功" : "Emby 切换失败";
-    content = "原线路：" + describe(before) + "\n目标线路：" + describe(target) + "\n实际线路：" + describe(after);
+    content = "原来线路：" + describe(before) + "\n目标线路：" + describe(target) + "\n实际线路：" + describe(after);
     shouldNotify = true;
   }
 } catch (e) {
