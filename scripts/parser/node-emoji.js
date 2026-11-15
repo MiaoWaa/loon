@@ -55,10 +55,10 @@
   function detectFormat(text) {
     var t = text.trim();
     if (!t) return "empty";
-    if (/^proxies\\s*:/m.test(t)) return "clash-yaml";
-    if (/^\\s*\\[Proxy\\]/mi.test(t)) return "loon-proxy";
-    if (/^(ss|ssr|vmess|vless|trojan|hysteria2|hysteria|tuic|anytls):\\/\\//mi.test(t)) return "uri-list";
-    if (/^[A-Za-z0-9+/_=\\-\\s]+$/.test(t) && t.length > 24) return "base64-candidate";
+    if (/^proxies\s*:/m.test(t)) return "clash-yaml";
+    if (/^\s*\[Proxy\]/mi.test(t)) return "loon-proxy";
+    if (/^(ss|ssr|vmess|vless|trojan|hysteria2|hysteria|tuic|anytls):\/\//mi.test(t)) return "uri-list";
+    if (/^[A-Za-z0-9+/_=\s-]+$/.test(t) && t.length > 24) return "base64-candidate";
     return "unknown-text";
   }
   console.log("[节点国旗 Emoji] 资源类型=" + (typeof $resourceType === "undefined" ? "unknown" : $resourceType) + "，输入长度=" + source.length + "，格式=" + detectFormat(source));
