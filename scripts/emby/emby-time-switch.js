@@ -1,45 +1,20 @@
-/*
- * Loon Emby 定时切换
- * 北京时间 02:00–19:00：EM-D
- * 北京时间 19:00–02:00：EM-P
- * Generic 传入 "manual" 时显示结果，Cron 保持静默。
- */
+/* Loon Emby 定时切换：北京时间 02:00–19:00 EM-D；19:00–02:00 EM-P */
 const GROUP = "Emby";
 const NORMAL = "EM-D";
 const PREMIUM = "EM-P";
-const now = new Date();
-const hour = (now.getUTCHours() + 8) % 24;
+const hour = (new Date().getUTCHours() + 8) % 24;
 const target = (hour >= 19 || hour < 2) ? PREMIUM : NORMAL;
-const time = String(hour).padStart(2, "0") + ":" +
-  String(now.getUTCMinutes()).padStart(2, "0");
-const manual = typeof $argument !== "undefined" && $argument === "manual";
-
-let title = "Emby 线路状态";
-let message = "";
 try {
   const current = $config.getSelectedPolicy(GROUP);
   if (!current) {
-    title = "Emby 检查失败";
-    message = "未找到策略组：" + GROUP;
+    console.log("[Emby] 未找到策略组：" + GROUP);
   } else if (current === target) {
-    title = "Emby 无需切换";
-    message = "当前线路：" + target + "\n状态：已是目标线路";
+    console.log("[Emby] 无需切换：" + target);
   } else {
-    const requested = $config.setSelectPolicy(GROUP, target);
-    const selected = $config.getSelectedPolicy(GROUP);
-    if (requested && selected === target) {
-      title = "Emby 切换成功";
-      message = "原线路：" + current + "\n当前线路：" + selected;
-    } else {
-      title = "Emby 切换失败";
-      message = "原线路：" + current + "\n目标线路：" + target +
-        "\n实际线路：" + String(selected);
-    }
+    const success = $config.setSelectPolicy(GROUP, target);
+    console.log("[Emby] " + (success ? "切换请求成功" : "切换请求失败") + "：" + current + " -> " + target);
   }
-} catch (error) {
-  title = "Emby 执行异常";
-  message = String(error);
+} catch (e) {
+  console.log("[Emby] 执行错误：" + String(e));
 }
-message += "\n北京时间：" + time;
-console.log("[Emby] " + title + "；" + message.replace(/\n/g, "；"));
-$done(manual ? { title: title, content: message } : undefined);
+$done();
