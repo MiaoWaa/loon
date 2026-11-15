@@ -1,0 +1,13 @@
+#!name = Gemini解锁筛选
+#!desc = 手动检测策略组节点的 Gemini 网页可用性，自动选择通过初筛的节点
+#!author = MiaoWaa
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png
+#!system = iOS,iPadOS,tvOS,macOS
+#!type = normal
+
+[Argument]
+group = input,"Gemini",type=string,tag=待筛选策略组,desc=默认 Gemini
+
+[Script]
+# Gemini 解锁筛选（手动执行）
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/gemini/unlock-filter.js", {${group}}) with tag="Gemini解锁筛选", timeout=300
