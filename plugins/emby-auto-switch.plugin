@@ -16,10 +16,10 @@ notify = switch,true,tag=切换通知,desc=定时切换成功或失败时通知�
 
 [Script]
 # Emby 手动切换
-generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-manual.js?v=20261115-label3", {${group}, ${normal}, ${premium}}) with tag="Emby手动切换", timeout=30
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-manual.js?v=20261115-align6", {${group}, ${normal}, ${premium}}) with tag="Emby手动切换", timeout=30
 
 # Emby 晚高峰切换专线
-cron "0 19 * * *" then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-cron.js?v=20261115-label3", {${group}, ${normal}, ${premium}, ${notify}}) with tag="Emby切换专线", timeout=30
+cron "0 19 * * *" then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-cron.js?v=20261115-align6", {${group}, ${normal}, ${premium}, ${notify}}) with tag="Emby切换专线", timeout=30
 
 # Emby 凌晨恢复普通线路
-cron "0 2 * * *" then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-cron.js?v=20261115-label3", {${group}, ${normal}, ${premium}, ${notify}}) with tag="Emby恢复普通", timeout=30
+cron "0 2 * * *" then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-cron.js?v=20261115-align6", {${group}, ${normal}, ${premium}, ${notify}}) with tag="Emby恢复普通", timeout=30
