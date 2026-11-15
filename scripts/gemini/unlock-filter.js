@@ -4,7 +4,7 @@
  * 结果是网络/地区可用性初筛，不代表账号可登录或具备全部功能。
  */
 const a = (typeof $argument !== "undefined" && $argument && typeof $argument === "object") ? $argument : {};
-const GROUP = String(a.group || "Gemini").trim();
+const GROUP = String(a.gemini_group || a.group || "Gemini").trim();
 const SERVICE = "Gemini";
 const TIMEOUT = 8000;
 const CONCURRENCY = 3;
