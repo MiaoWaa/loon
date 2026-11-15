@@ -1,0 +1,18 @@
+#!name = AI解锁筛选
+#!desc = 手动筛选 ChatGPT 和 Gemini 各自策略组的可用节点；两项独立执行
+#!author = MiaoWaa
+#!homepage = https://github.com/MiaoWaa/loon
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+#!system = iOS,iPadOS,tvOS,macOS
+#!type = normal
+
+[Argument]
+chatgpt_group = input,"ChatGPT",type=string,tag=ChatGPT策略组,desc=默认 ChatGPT
+gemini_group = input,"Gemini",type=string,tag=Gemini策略组,desc=默认 Gemini
+
+[Script]
+# ChatGPT 解锁筛选（手动执行）
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/chatgpt/unlock-filter.js", {${chatgpt_group}}) with tag="ChatGPT解锁筛选", timeout=300
+
+# Gemini 解锁筛选（手动执行）
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/gemini/unlock-filter.js", {${gemini_group}}) with tag="Gemini解锁筛选", timeout=300
