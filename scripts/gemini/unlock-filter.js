@@ -65,7 +65,7 @@ async function scan(nodes) {
   done(title, "━━━━━━━━━━━━━━" +
     "\n策略组  " + GROUP +
     "\n\n📊 检测统计" +
-    "\n  检测总数   " + nodes.length +
+    "\n  🔎 检测总数  " + nodes.length +
     "\n  ✅ 通过初筛  " + passed.length +
     "\n  ❌ 明确受限  " + failed +
     "\n  ⚠️ 无法判断  " + unknown +
