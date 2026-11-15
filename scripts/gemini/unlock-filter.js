@@ -1,6 +1,8 @@
 /*
  * Loon AI 服务节点筛选 - 手动版
  * 服务：Gemini
+ * Gemini 检测、Loon 适配及策略组自动选择：MiaoWaa
+ * 未直接引用第三方 Gemini 检测脚本。
  * 结果是网络/地区可用性初筛，不代表账号可登录或具备全部功能。
  */
 const a = (typeof $argument !== "undefined" && $argument && typeof $argument === "object") ? $argument : {};
