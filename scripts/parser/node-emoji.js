@@ -29,7 +29,20 @@
   function rename(name) {
     var flag = flagFor(name);
     if (!flag) return name;
-    var cleaned = name.replace(/^\s*(?:[\u{1F1E6}-\u{1F1FF}]{2}|[☒☐☑□■▣]|\uFFFD)\s*/u, "").trim();
+    var cleaned = name.trim();
+    // 不使用 Unicode 字符范围正则，兼容 Loon JavaScript 运行环境。
+    var prefixes = ["🇹🇼", "🇨🇳", "🇭🇰", "🇯🇵", "🇸🇬", "🇺🇸", "🇰🇷", "🇬🇧", "🇩🇪", "🇫🇷", "🇨🇦", "🇦🇺", "🇳🇱", "☒", "☐", "☑", "□", "■", "▣", "�"];
+    for (var j = 0; j < 4; j++) {
+      var found = false;
+      for (var k = 0; k < prefixes.length; k++) {
+        if (cleaned.indexOf(prefixes[k]) === 0) {
+          cleaned = cleaned.slice(prefixes[k].length).trim();
+          found = true;
+          break;
+        }
+      }
+      if (!found) break;
+    }
     return flag + " " + cleaned;
   }
   function transform(line) {
@@ -56,7 +69,7 @@
     if (/^proxies\s*:/m.test(t)) return "clash-yaml";
     if (/^\s*\[Proxy\]/mi.test(t)) return "loon-proxy";
     if (/^(ss|ssr|vmess|vless|trojan|hysteria2|hysteria|tuic|anytls):\/\//mi.test(t)) return "uri-list";
-    if (/^[A-Za-z0-9+/_=\s-]+$/.test(t) && t.length > 24) return "base64-candidate";
+    if (t.length > 24 && t.indexOf("://") < 0 && t.indexOf("=") >= 0 && t.indexOf("\n") < 0) return "base64-candidate";
     return "unknown-text";
   }
   console.log("[节点国旗 Emoji] 资源类型=" + (typeof $resourceType === "undefined" ? "unknown" : $resourceType) + "，输入长度=" + source.length + "，格式=" + detectFormat(source));
