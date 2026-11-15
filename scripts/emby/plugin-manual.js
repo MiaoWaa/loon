@@ -7,8 +7,8 @@ const now = new Date();
 const hour = (now.getUTCHours() + 8) % 24;
 const target = (hour >= 19 || hour < 2) ? premium : normal;
 function describe(line) {
-  if (line === normal) return String(line) + "（普通线路）";
-  if (line === premium) return String(line) + "（专线）";
+  if (line === normal) return String(line) + "（🌐 普通线路）";
+  if (line === premium) return String(line) + "（🚀 专线线路）";
   return String(line);
 }
 let title = "Emby 线路检查", content = "";
