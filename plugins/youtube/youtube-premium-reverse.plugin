@@ -1,5 +1,5 @@
 #!name = YouTube Premium反向筛选
-#!desc = 手动检测指定策略组的节点，仅选中明确提示不支持 YouTube Premium 的节点；异常不切换
+#!desc = 手动执行脚本，选中不支持 YouTube Premium 的节点，达到去广告效果。
 #!author = MiaoWaa | 检测参考：XIAO_KOP
 #!homepage = https://github.com/MiaoWaa/loon
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
