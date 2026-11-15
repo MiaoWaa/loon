@@ -14,8 +14,8 @@ normal = input,"EM-D",type=string,tag=普通线路策略组,desc=例如 EM-D
 premium = input,"EM-P",type=string,tag=专线策略组,desc=例如 EM-P
 
 [Script]
-# Emby 手动校准线路
-generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-manual.js", {${group}, ${normal}, ${premium}}) with tag="Emby插件手动测试", timeout=30
+# Emby 手动切换
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-manual.js", {${group}, ${normal}, ${premium}}) with tag="Emby手动切换", timeout=30
 
 # Emby 晚高峰切换专线
 cron "0 19 * * *" then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/emby/plugin-cron.js", {${group}, ${normal}, ${premium}}) with tag="Emby插件切换专线", timeout=30
