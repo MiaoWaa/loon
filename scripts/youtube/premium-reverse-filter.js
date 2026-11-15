@@ -79,7 +79,7 @@ async function scan(nodes) {
     const target = qualified[0].node;
     const accepted = $config.setSelectPolicy(GROUP, target);
     const actual = $config.getSelectedPolicy(GROUP);
-    if (accepted && actual === target) selection = "已选中 " + target;
+    if (accepted && actual === target) selection = "已选中" + target;
     else {
       title = "YouTube 切换失败";
       selection = "候选：" + target + "；实际：" + String(actual);
