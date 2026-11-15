@@ -1,6 +1,6 @@
 #!name = AI解锁筛选
 #!desc = 手动筛选 ChatGPT 和 Gemini 各自策略组的可用节点；两项独立执行
-#!author = MiaoWaa (参考 XIAO_KOP) 
+#!author = MiaoWaa | ChatGPT检测参考：XIAO_KOP
 #!reference = https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
 #!homepage = https://github.com/MiaoWaa/loon
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
