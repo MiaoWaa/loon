@@ -2,7 +2,7 @@
  * Loon Emby 定时切换
  * 北京时间 02:00–19:00：EM-D
  * 北京时间 19:00–02:00：EM-P
- * Generic 手动执行返回结果；Cron 静默执行。
+ * Generic 传入 "manual" 时显示结果，Cron 保持静默。
  */
 const GROUP = "Emby";
 const NORMAL = "EM-D";
@@ -12,8 +12,7 @@ const hour = (now.getUTCHours() + 8) % 24;
 const target = (hour >= 19 || hour < 2) ? PREMIUM : NORMAL;
 const time = String(hour).padStart(2, "0") + ":" +
   String(now.getUTCMinutes()).padStart(2, "0");
-const manual = typeof $script !== "undefined" &&
-  $script.name === "Emby线路测试";
+const manual = typeof $argument !== "undefined" && $argument === "manual";
 
 let title = "Emby 线路状态";
 let message = "";
@@ -43,8 +42,4 @@ try {
 }
 message += "\n北京时间：" + time;
 console.log("[Emby] " + title + "；" + message.replace(/\n/g, "；"));
-if (manual) {
-  $done({ title: title, content: message });
-} else {
-  $done();
-}
+$done(manual ? { title: title, content: message } : undefined);
