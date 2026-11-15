@@ -1,0 +1,11 @@
+#!name = 节点国旗 Emoji
+#!desc = 为常见地区节点名称自动添加国旗 Emoji；仅修改名称，不修改连接参数
+#!author = MiaoWaa
+#!homepage = https://github.com/MiaoWaa/loon
+#!system = iOS,iPadOS,tvOS,macOS
+#!loon_version = 3.5.1(983)
+#!tag = 节点,解析器
+#!type = parser
+
+[Script]
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/parser/node-emoji.js") with tag="节点国旗 Emoji", timeout=30
