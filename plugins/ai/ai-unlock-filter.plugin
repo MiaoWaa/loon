@@ -3,7 +3,7 @@
 #!author = MiaoWaa | ChatGPT检测参考：XIAO_KOP
 #!reference = https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
 #!homepage = https://github.com/MiaoWaa/loon
-#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png
+#!icon = https://raw.githubusercontent.com/MiaoWaa/loon/main/icons/ai-unlock.png
 #!system = iOS,iPadOS,tvOS,macOS
 #!type = normal
 
