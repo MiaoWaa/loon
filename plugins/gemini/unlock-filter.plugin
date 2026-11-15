@@ -5,6 +5,8 @@
 #!system = iOS,iPadOS,tvOS,macOS
 #!type = normal
 
+# Gemini 网页检测及自动选择：MiaoWaa（独立实现）
+
 [Argument]
 group = input,"Gemini",type=string,tag=待筛选策略组,desc=默认 Gemini
 
