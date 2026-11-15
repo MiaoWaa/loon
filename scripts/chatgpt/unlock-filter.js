@@ -1,6 +1,10 @@
 /*
  * Loon AI 服务节点筛选 - 手动版
  * 服务：ChatGPT
+ * 检测思路参考：XIAO_KOP (KOP-XIAO)
+ * 参考：https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
+ * Loon 适配、策略组扫描与自动选择：MiaoWaa
+ * 本脚本为重新实现，并非原脚本的逐行移植。
  * 结果是网络/地区可用性初筛，不代表账号可登录或具备全部功能。
  */
 const a = (typeof $argument !== "undefined" && $argument && typeof $argument === "object") ? $argument : {};
