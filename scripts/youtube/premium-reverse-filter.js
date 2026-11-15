@@ -1,5 +1,8 @@
 /*
  * YouTube Premium 反向筛选（手动）
+ * YouTube Premium 地区限制检测思路参考：XIAO_KOP (KOP-XIAO)
+ * 参考：https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/streaming-ui-check.js
+ * Loon 适配、反向筛选与自动切换：MiaoWaa
  * 仅在 YouTube 页面明确提示 Premium 不可用时才作为候选。
  * 检测失败、HTTP 异常、页面无法识别一律不切换。
  */
