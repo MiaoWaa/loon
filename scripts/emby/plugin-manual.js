@@ -27,7 +27,7 @@ try {
 }
 content = "━━━━━━━━━━━━━━\n" +
   content.split("\n").map(function(line) { return "  " + line; }).join("\n") +
-  "\n\n执行时间  北京时间 " + String(hour).padStart(2, "0") + ":" + String(now.getUTCMinutes()).padStart(2, "0") +
+  "\n\n🕒 执行时间  北京时间 " + String(hour).padStart(2, "0") + ":" + String(now.getUTCMinutes()).padStart(2, "0") +
   "\n━━━━━━━━━━━━━━";
 console.log("[Emby Plugin] " + title + "；" + content.replace(/\n/g, "；"));
 $done({ title: title, content: content });
