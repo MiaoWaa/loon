@@ -88,7 +88,7 @@ async function scan(nodes) {
   finish(title, "━━━━━━━━━━━━━━" +
     "\n策略组  " + GROUP +
     "\n\n📊 Premium 地区检测" +
-    "\n  检测总数   " + nodes.length +
+    "\n  🔎 检测总数  " + nodes.length +
     "\n  ✅ 明确不支持  " + counts.unsupported +
     "\n  🌐 页面可访问  " + counts.supported +
     "\n  ⚠️ 无法判断    " + counts.unknown +
