@@ -16,7 +16,7 @@ gemini_group = input,"Gemini",type=string,tag=Gemini策略组,desc=默认 Gemini
 
 [Script]
 # ChatGPT 解锁筛选（手动执行）
-generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/chatgpt/unlock-filter.js?v=20261115-align4", {${chatgpt_group}}) with tag="ChatGPT解锁筛选", timeout=300
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/chatgpt/unlock-filter.js?v=20261115-align5", {${chatgpt_group}}) with tag="ChatGPT解锁筛选", timeout=300
 
 # Gemini 解锁筛选（手动执行）
-generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/gemini/unlock-filter.js?v=20261115-align4", {${gemini_group}}) with tag="Gemini解锁筛选", timeout=300
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/gemini/unlock-filter.js?v=20261115-align5", {${gemini_group}}) with tag="Gemini解锁筛选", timeout=300
