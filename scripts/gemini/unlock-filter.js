@@ -59,7 +59,7 @@ async function scan(nodes) {
     const target = passed[0];
     const ok = $config.setSelectPolicy(GROUP, target);
     const after = $config.getSelectedPolicy(GROUP);
-    if (ok && after === target) result = "已选中：" + target;
+    if (ok && after === target) result = "已选中 " + target;
     else { title = SERVICE + " 切换失败"; result = "目标：" + target + "；实际：" + String(after); }
   }
   done(title, "━━━━━━━━━━━━━━" +
