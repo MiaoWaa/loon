@@ -8,4 +8,4 @@
 #!type = parser
 
 [Script]
-generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/parser/node-emoji.js") with tag="节点国旗 Emoji", timeout=30
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/parser/node-emoji.js?v=20261115-2") with tag="节点国旗 Emoji", timeout=30
