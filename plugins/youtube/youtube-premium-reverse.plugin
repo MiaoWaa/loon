@@ -16,4 +16,4 @@ group = input,"YouTube",type=string,tag=待筛选策略组,desc=默认 YouTube
 
 [Script]
 # YouTube Premium 反向筛选（手动执行）
-generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/youtube/premium-reverse-filter.js?v=20261115-align4", {${group}}) with tag="YouTube反向筛选", img_url="play.circle.system", timeout=300
+generic then script("https://raw.githubusercontent.com/MiaoWaa/loon/main/scripts/youtube/premium-reverse-filter.js?v=20261115-align5", {${group}}) with tag="YouTube反向筛选", img_url="play.circle.system", timeout=300
