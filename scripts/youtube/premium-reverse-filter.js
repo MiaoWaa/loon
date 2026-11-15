@@ -87,15 +87,15 @@ async function scan(nodes) {
   }
   finish(title, "━━━━━━━━━━━━━━" +
     "\n策略组  " + GROUP +
-    "\n\nPremium 地区检测" +
+    "\n\n📊 Premium 地区检测" +
     "\n  检测总数   " + nodes.length +
-    "\n  ✓ 明确不支持  " + counts.unsupported +
-    "\n  · 页面可访问  " + counts.supported +
-    "\n  ? 无法判断    " + counts.unknown +
-    "\n\n节点选择" +
+    "\n  ✅ 明确不支持  " + counts.unsupported +
+    "\n  🌐 页面可访问  " + counts.supported +
+    "\n  ⚠️ 无法判断    " + counts.unknown +
+    "\n\n🎯 节点选择" +
     "\n  原选择  " + String(before) +
     "\n  " + selection +
-    "\n\n注：页面可访问不代表支持 Premium" +
+    "\n\n💡 页面可访问不代表支持 Premium" +
     "\n━━━━━━━━━━━━━━");
 }
 try {
