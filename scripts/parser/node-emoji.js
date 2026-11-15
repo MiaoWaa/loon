@@ -27,11 +27,9 @@
     return "";
   }
   function rename(name) {
-    // 按地区文字识别，不依赖原有国旗是否正确。
     var flag = flagFor(name);
     if (!flag) return name;
-    // 仅移除名称开头已有的国旗或异常方框，不碰名称中间的内容。
-    var cleaned = name.replace(/^\\s*(?:(?:[\\u{1F1E6}-\\u{1F1FF}]{2})|[☒☐☑□■▣]|[\\uFFFD])\\s*/gu, "").trim();
+    var cleaned = name.replace(/^\s*(?:[\u{1F1E6}-\u{1F1FF}]{2}|[☒☐☑□■▣]|\uFFFD)\s*/u, "").trim();
     return flag + " " + cleaned;
   }
   function transform(line) {
@@ -63,7 +61,7 @@
   }
   console.log("[节点国旗 Emoji] 资源类型=" + (typeof $resourceType === "undefined" ? "unknown" : $resourceType) + "，输入长度=" + source.length + "，格式=" + detectFormat(source));
   try {
-    var lines = source.split(/(\\r\\n|\\n|\\r)/);
+    var lines = source.split(/(\r\n|\n|\r)/);
     var section = "";
     var changed = 0;
     for (var i = 0; i < lines.length; i += 2) {
