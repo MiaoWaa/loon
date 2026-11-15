@@ -62,9 +62,17 @@ async function scan(nodes) {
     if (ok && after === target) result = "已选中：" + target;
     else { title = SERVICE + " 切换失败"; result = "目标：" + target + "；实际：" + String(after); }
   }
-  done(title, "策略组：" + GROUP + "\n检测：" + nodes.length + "\n通过初筛：" + passed.length +
-    "\n明确受限：" + failed + "\n异常/不确定：" + unknown +
-    "\n原选择：" + String(before) + "\n" + result);
+  done(title, "━━━━━━━━━━━━━━" +
+    "\n策略组  " + GROUP +
+    "\n\n检测统计" +
+    "\n  检测总数   " + nodes.length +
+    "\n  ✓ 通过初筛  " + passed.length +
+    "\n  × 明确受限  " + failed +
+    "\n  ? 无法判断  " + unknown +
+    "\n\n节点选择" +
+    "\n  原选择  " + String(before) +
+    "\n  " + result +
+    "\n━━━━━━━━━━━━━━");
 }
 try {
   $config.getSubPolicies(GROUP, function(raw) {
