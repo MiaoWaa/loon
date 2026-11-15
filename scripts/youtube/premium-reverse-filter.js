@@ -85,11 +85,18 @@ async function scan(nodes) {
       selection = "候选：" + target + "；实际：" + String(actual);
     }
   }
-  finish(title, "策略组：" + GROUP + "\n检测节点：" + nodes.length +
-    "\n明确不支持：" + counts.unsupported +
-    "\n页面可访问（未证实支持）：" + counts.supported +
-    "\n检测异常/无法判断：" + counts.unknown +
-    "\n原选择：" + String(before) + "\n" + selection);
+  finish(title, "━━━━━━━━━━━━━━" +
+    "\n策略组  " + GROUP +
+    "\n\nPremium 地区检测" +
+    "\n  检测总数   " + nodes.length +
+    "\n  ✓ 明确不支持  " + counts.unsupported +
+    "\n  · 页面可访问  " + counts.supported +
+    "\n  ? 无法判断    " + counts.unknown +
+    "\n\n节点选择" +
+    "\n  原选择  " + String(before) +
+    "\n  " + selection +
+    "\n\n注：页面可访问不代表支持 Premium" +
+    "\n━━━━━━━━━━━━━━");
 }
 try {
   if (!GROUP) {
