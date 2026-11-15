@@ -8,7 +8,7 @@
   }
   var regions = [
     ["🇭🇰", /香港|hong[ -]?kong|\bHK\b/i],
-    ["🇹🇼", /台湾|臺灣|taiwan|taipei|\bTW\b/i],
+    ["🇨🇳", /台湾|臺灣|taiwan|taipei|\bTW\b/i],
     ["🇯🇵", /日本|东京|東京|大阪|japan|tokyo|osaka|\bJP\b/i],
     ["🇸🇬", /新加坡|狮城|singapore|\bSG\b/i],
     ["🇺🇸", /美国|美國|洛杉矶|洛杉磯|纽约|紐約|united[ -]?states|los[ -]?angeles|new[ -]?york|\bUS\b|\bUSA\b/i],
