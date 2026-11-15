@@ -27,13 +27,12 @@
     return "";
   }
   function rename(name) {
-    // 优先处理订阅自带的台湾旗帜，即使名称中没有“台湾/TW”字样。
-    if (name.indexOf("🇹🇼") !== -1) {
-      return name.replace(/🇹🇼/g, "🇨🇳");
-    }
+    // 按地区文字识别，不依赖原有国旗是否正确。
     var flag = flagFor(name);
-    if (!flag || /[\u{1F1E6}-\u{1F1FF}]{2}/u.test(name)) return name;
-    return flag + " " + name;
+    if (!flag) return name;
+    // 仅移除名称开头已有的国旗或异常方框，不碰名称中间的内容。
+    var cleaned = name.replace(/^\\s*(?:(?:[\\u{1F1E6}-\\u{1F1FF}]{2})|[☒☐☑□■▣]|[\\uFFFD])\\s*/gu, "").trim();
+    return flag + " " + cleaned;
   }
   function transform(line) {
     var m = /^(\s*)([^#=\r\n][^=\r\n]*?)(\s*=\s*)([^\r\n]+)$/.exec(line);
