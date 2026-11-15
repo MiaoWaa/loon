@@ -12,8 +12,8 @@
 group = input,"Emby",type=string,tag=主策略组,desc=例如 Emby
 normal = input,"EM-D",type=string,tag=普通线路策略组,desc=例如 EM-D
 premium = input,"EM-P",type=string,tag=专线策略组,desc=例如 EM-P
-switch_premium = switch,true,type=boolean,tag=19:00自动切专线
-switch_normal = switch,true,type=boolean,tag=02:00自动恢复普通
+switch_premium = switch,true,tag=自动切换专线,desc=每天19:00
+switch_normal = switch,true,tag=自动恢复普通,desc=每天02:00
 
 [Script]
 # Emby 手动切换
