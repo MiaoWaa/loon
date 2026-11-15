@@ -27,6 +27,10 @@
     return "";
   }
   function rename(name) {
+    // 优先处理订阅自带的台湾旗帜，即使名称中没有“台湾/TW”字样。
+    if (name.indexOf("🇹🇼") !== -1) {
+      return name.replace(/🇹🇼/g, "🇨🇳");
+    }
     var flag = flagFor(name);
     if (!flag || /[\u{1F1E6}-\u{1F1FF}]{2}/u.test(name)) return name;
     return flag + " " + name;
