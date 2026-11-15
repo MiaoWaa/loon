@@ -19,7 +19,7 @@ try {
     content = "未找到主策略组：" + group;
   } else if (before === target) {
     title = "Emby 无需切换";
-    content = "当前线路：" + describe(before);
+    content = "📍当前线路：" + describe(before);
   } else {
     $config.setSelectPolicy(group, target);
     const after = $config.getSelectedPolicy(group);
@@ -31,8 +31,8 @@ try {
   content = String(e);
 }
 content = "━━━━━━━━━━━━━━\n" +
-  content.split("\n").map(function(line) { return "  " + line; }).join("\n") +
-  "\n\n🕒 执行时间  北京时间 " + String(hour).padStart(2, "0") + ":" + String(now.getUTCMinutes()).padStart(2, "0") +
+  content +
+  "\n\n🕒执行时间 北京时间 " + String(hour).padStart(2, "0") + ":" + String(now.getUTCMinutes()).padStart(2, "0") +
   "\n━━━━━━━━━━━━━━";
 console.log("[Emby Plugin] " + title + "；" + content.replace(/\n/g, "；"));
 $done({ title: title, content: content });
