@@ -7,6 +7,11 @@ const notify = args.notify !== false && args.notify !== "false" && args.notify !
 const now = new Date();
 const hour = (now.getUTCHours() + 8) % 24;
 const target = (hour >= 19 || hour < 2) ? premium : normal;
+function describe(line) {
+  if (line === normal) return String(line) + "（普通线路）";
+  if (line === premium) return String(line) + "（专线）";
+  return String(line);
+}
 let title = "Emby 线路检查", content = "";
 let shouldNotify = false;
 try {
@@ -17,12 +22,12 @@ try {
     shouldNotify = true;
   } else if (before === target) {
     title = "Emby 无需切换";
-    content = "当前线路：" + before;
+    content = "当前线路：" + describe(before);
   } else {
     $config.setSelectPolicy(group, target);
     const after = $config.getSelectedPolicy(group);
     title = after === target ? "Emby 切换成功" : "Emby 切换失败";
-    content = "原线路：" + before + "\n目标线路：" + target + "\n实际线路：" + String(after);
+    content = "原线路：" + describe(before) + "\n目标线路：" + describe(target) + "\n实际线路：" + describe(after);
     shouldNotify = true;
   }
 } catch (e) {
